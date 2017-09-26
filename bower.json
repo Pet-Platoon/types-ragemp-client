@@ -1,0 +1,24 @@
+{
+  "name": "types-ragemp-client",
+  "description": "Clientside definitions for RageMP",
+  "main": "",
+  "authors": [
+    "pet-platoon"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "ragemp",
+    "gta",
+    "gta5",
+    "rage",
+    "mp"
+  ],
+  "homepage": "https://github.com/Pet-Platoon/types-ragemp-client",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
