@@ -1,4 +1,4 @@
-i/// <reference path="types/MP.d.ts" />
+/// <reference path="types/MP.d.ts" />
 /// <reference path="types/MP.Blip.d.ts" />
 /// <reference path="types/MP.Browser.d.ts" />
 /// <reference path="types/MP.Camera.d.ts" />
