@@ -14,6 +14,7 @@ declare interface MpBlip extends MpEntity {
     isMissionCreator(): boolean;
     setFade(opacity: number, duration: number): void;
     setFlashesAlternate(toggle: boolean): void;
+    setAlpha(alphaLevel: string, skin: boolean): void;
     setAlpha(alpha: number): void;
     getInfoIdEntityIndex(): MpEntity | object;
     setRoute(enabled: boolean): void;
