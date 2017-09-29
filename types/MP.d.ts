@@ -1,16 +1,17 @@
 /// <reference path="../index.d.ts" />
 
 declare interface ScriptContext {
-    players: MpPlayerPool;
-    vehicles: MpVehiclePool;
-    objects: MpObjectPool;
-    pickups: MpPickupPool;
-    blips: MpBlipPool;
-    markers: MpMarkerPool;
-    checkpoints: MpCheckpointPool;
-    cameras: MpCameraPool;
-    browsers: MpBrowserPool;
-    colshapes: MpColshapePool;
-    events: MpEvents;
-    game: MpGame;
+    readonly players: MpPlayerPool;
+    readonly vehicles: MpVehiclePool;
+    readonly objects: MpObjectPool;
+    readonly pickups: MpPickupPool;
+    readonly blips: MpBlipPool;
+    readonly gui: MpGui;
+    readonly markers: MpMarkerPool;
+    readonly checkpoints: MpCheckpointPool;
+    readonly cameras: MpCameraPool;
+    readonly browsers: MpBrowserPool;
+    readonly colshapes: MpColshapePool;
+    readonly events: MpEvents;
+    readonly game: MpGame;
 }
