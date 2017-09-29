@@ -21,7 +21,7 @@ declare interface MpGamePathfind {
     };
     setPedPathsInArea(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, unknown: boolean): void;
     addNavmeshRequiredRegion(p0: number, p1: number, p2: number): void;
-    getNthClosestVehicleNodeFavourDirection(x: number, y: number, z: number, desiredX: number, desiredY: number, desiredZ: number, nthClosest: number, outPosition: MpVector3, outHeading: number, nodetype: MpGamePathfindNodeTypes, p10: object, p11: object): {
+    getNthClosestVehicleNodeFavourDirection(x: number, y: number, z: number, desiredX: number, desiredY: number, desiredZ: number, nthClosest: number, outPosition: MpVector3, outHeading: number, nodetype: number, p10: object, p11: object): {
         readonly outPosition: MpVector3;
         readonly outHeading: number;
     };
@@ -59,10 +59,4 @@ declare interface MpGamePathfind {
         readonly outPosition: MpVector3;
         readonly outHeading: number;
     };
-}
-
-declare enum MpGamePathfindNodeTypes {
-    pavedRoadOnly = 0,
-    anyRoad = 1,
-    water = 3,
 }

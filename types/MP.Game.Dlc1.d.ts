@@ -74,19 +74,11 @@ declare interface MpGameDlc1 {
         desc2Label: string;
         upperCaseNameLabel: string;
     }): boolean;
-    getNumPropsFromOutfit(p0: MpGameDlc1CharacterType | number, p1: number, p2: number, p3: boolean, p4: number, componentId: number): number;
+    getNumPropsFromOutfit(p0: number | number, p1: number, p2: number, p3: boolean, p4: number, componentId: number): number;
     getShopPedOutfit(p0: object, p1: object): void;
     getNumForcedComponents(componentHash: string | number): number;
     isDlcDataEmpty(dlcData: number): boolean;
     getShopPedQueryProp(p0: object, p1: object): void;
     initShopPedProp(outProp: number): number;
     getDlcVehicleModel(dlcVehicleIndex: number): string | number;
-}
-
-declare enum MpGameDlc1CharacterType {
-    michael = 0,
-    franklin = 1,
-    trevor = 2,
-    freemodeMale = 3,
-    freemodeFemale = 4
 }

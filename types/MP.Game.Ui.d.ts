@@ -20,7 +20,7 @@ declare interface MpGameUi {
     keyHudColour(p0: boolean, p1: object): void;
     getNamedRendertargetRenderId(p0: string): object;
     doesTextBlockExist(gxt: string): boolean;
-    setNotificationMessage(picName1: string, picName2: string, flash: boolean, iconType: MpGameUiIconTypes, sender: string, subject: string): number;
+    setNotificationMessage(picName1: string, picName2: string, flash: boolean, iconType: number, sender: string, subject: string): number;
     setTextChatUnk(p0: boolean): void;
     setNotificationTextEntry(type: string): void;
     getHudComponentPosition(p0: object): number;
@@ -40,11 +40,11 @@ declare interface MpGameUi {
     setTextDropshadow(distance: number, r: number, g: number, b: number, a: number): void;
     addBlipForRadius(posX: number, posY: number, posZ: number, radius: number): MpBlip;
     enableDeathbloodSeethrough(p0: boolean): void;
-    setTextJustification(justifyType: MpGameUiJustifyTypes): void;
+    setTextJustification(justifyType: number): void;
     hasHeadDisplayLoaded(headDisplayId: number): boolean;
     clearFloatingHelp(p0: object, p1: boolean): void;
     setTextGxtEntry(entry: string): void;
-    setNotificationMessageClanTag2(picName1: string, picName2: string, flash: boolean, iconType1: MpGameUiIconTypes, sender: string, subject: string, duration: number, clanTag: string, iconType2: MpGameUiIconTypes, p9: number): number;
+    setNotificationMessageClanTag2(picName1: string, picName2: string, flash: boolean, iconType1: number, sender: string, subject: string, duration: number, clanTag: string, iconType2: number, p9: number): number;
     setTextEntryForWidth(text: string): void;
     registerNamedRendertarget(p0: string, p1: boolean): boolean;
     setMinimapBlockWaypoint(toggle: boolean): void;
@@ -53,13 +53,13 @@ declare interface MpGameUi {
     addBlipForCoord(x: number, y: number, z: number): MpBlip;
     objectDecalToggle(hash: number | string): void;
     setGpsFlags(p0: number, p1: number): void;
-    setNotificationMessageClanTag(picName1: string, picName2: string, flash: boolean, iconType: MpGameUiIconTypes, sender: string, subject: string, duration: number, clanTag: string): number;
+    setNotificationMessageClanTag(picName1: string, picName2: string, flash: boolean, iconType: number, sender: string, subject: string, duration: number, clanTag: string): number;
     setTextRenderId(renderId: number): void;
     setMissionName(p0: boolean, name: string): void;
     requestAdditionalText2(gxt: string, slot: number): void;
     addNextMessageToPreviousBriefs(p0: boolean): void;
     setTextWrap(start: number, end: number): void;
-    setHeadDisplayFlag(headDisplayId: MpGameUiHeadDisplayFlag, sprite: number, toggle: boolean): void;
+    setHeadDisplayFlag(headDisplayId: number, sprite: number, toggle: boolean): void;
     setTextFont(fontType: number): void;
     hideHudComponentThisFrame(id: number): void;
     toggleStealthRadar(toggle: boolean): void;
@@ -105,7 +105,7 @@ declare interface MpGameUi {
     hasThisAdditionalTextLoaded(gxt: string, slot: number): boolean;
     getTextSubstringSafe(text: string, position: number, length: number, maxLength: number): string;
     setTextEntry2(p0: string): void;
-    isHudComponentActive(id: MpGameUiHudComponentIds): boolean;
+    isHudComponentActive(id: number): boolean;
     respondingAsTemp(p0: number): void;
     showLoadingPrompt(busySpinnerType: number): void;
     addBlipForPickup(pickup: MpPickup): MpBlip;
@@ -142,69 +142,4 @@ declare interface MpGameUi {
     getBlipInfoIdCoord(p0: number): MpVector3;
     setMultiplayerHudCash(p0: number, p1: number): void;
     setNewWaypoint(x: number, y: number): void;
-}
-
-declare enum MpGameUiIconTypes {
-    chatBox = 1,
-    email = 2,
-    addFriendRequest = 3,
-    nothing1 = 4,
-    nothing2 = 5,
-    nothing3 = 6,
-    rightJumpingArrow = 7,
-    rpIcon = 8,
-    dollarIcon = 9
-}
-
-declare enum MpGameUiJustifyTypes {
-    centerJustify = 0,
-    leftJustify = 1,
-    rightJustify = 2
-}
-
-declare enum MpGameUiHeadDisplayFlag {
-    TextWithOutline = 0,
-    NoneEmpty,
-    HealthBar,
-    AudioSpeaker,
-    FlagOrPaused,
-    Flag,
-    PassiveMode,
-    WantedStar,
-    SteeringWheel,
-    Headset,
-    HighlightPlayer,
-    TextNoOutline,
-    ArrowDown,
-    BreifCase,
-    LittleUser,
-    RankNumber,
-    VoiceIndicator
-}
-
-declare enum MpGameUiHudComponentIds {
-    hud = 0,
-    hudWantedStars = 1,
-    hudWeaponIcon = 2,
-    hudCash = 3,
-    hudMpCash = 4,
-    hudMpMessage = 5,
-    hudVehicleName = 6,
-    hudAreaName = 7,
-    hudVehicleClass = 8,
-    hudStreetName = 9,
-    hudHelpText = 10,
-    hudFloatingHelpText1 = 11,
-    hudFloatingHelpText2 = 12,
-    hudCashChange = 13,
-    hudReticle = 14,
-    hudSubtitleText = 15,
-    hudRadioStations = 16,
-    hudSavingGame = 17,
-    hudGameStream = 18,
-    hudWeaponWheel = 19,
-    hudWeaponWheelStats = 20,
-    maxHudComponents = 21,
-    maxHudWeapons = 22,
-    maxScriptedHudComponents = 141
 }

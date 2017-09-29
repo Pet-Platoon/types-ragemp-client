@@ -2,7 +2,7 @@
 
 declare interface MpPlayer extends MpEntity {
     readonly isClimbing: boolean;
-    readonly action: MpPlayerAction;
+    readonly action: string;
     name: string;
     heading: number;
     health: number;
@@ -67,7 +67,7 @@ declare interface MpPlayer extends MpEntity {
     setCanDoDriveBy(toggle: boolean): void;
     getParachutePackTintIndex(tintIndex: number): number;
     setClothPinFrames(toggle: boolean): void;
-    getParachuteTintIndex(tintIndex: MpPlayerParachuteTint): number;
+    getParachuteTintIndex(tintIndex: number): number;
     setForcedZoom(toggle: boolean): void;
     setForceSkipAimIntro(toggle: boolean): void;
     setMaxArmour(value: number): void;
@@ -85,10 +85,10 @@ declare interface MpPlayer extends MpEntity {
     setParachuteModelOverride(model: number | string): void;
     setSprint(toggle: boolean): void;
     getUnderwaterTimeRemaining(): number;
-    setParachuteTintIndex(tintIndex: MpPlayerParachuteTint): void;
+    setParachuteTintIndex(tintIndex: number): void;
     setVehicleDamageModifier(damageAmount: number): void;
     resetStamina(): void;
-    setReserveParachuteTintIndex(tintIndex: MpPlayerParachuteTint): void;
+    setReserveParachuteTintIndex(tintIndex: number): void;
     setSneakingNoiseMultiplier(multiplier: number): void;
     clearWantedLevel(): void;
     getInvincible(): boolean;
@@ -96,7 +96,7 @@ declare interface MpPlayer extends MpEntity {
     setWeaponDamageModifier(damageAmount: number): void;
     setCanUseCover(toggle: boolean): object;
     hasLeftTheWorld(): boolean;
-    getReserveParachuteTintIndex(tintIndex: MpPlayerParachuteTint): number;
+    getReserveParachuteTintIndex(tintIndex: number): number;
     setCanBeHassledByGangs(toggle: boolean): void;
     hasBeenSpottedInStolenVehicle(): boolean;
     setParachuteVariationOverride(p1: number, p2: object, p3: object, p4: boolean): void;
@@ -148,7 +148,7 @@ declare interface MpPlayer extends MpEntity {
     getCauseOfDeath(): number | string;
     getBoneCoords(boneId: number, offsetX: number, offsetY: number, offsetZ: number): MpVector3;
     getMeleeTargetFor(): MpPed | object;
-    setConfigFlag(flagId: MpPlayerPedConfigFlags, value: boolean): void;
+    setConfigFlag(flagId: number, value: boolean): void;
     isUsingScenario(scenario: string): boolean;
     isHangingOnToVehicle(): boolean;
     setCanSmashGlass(p1: boolean, p2: boolean): void;
@@ -159,7 +159,7 @@ declare interface MpPlayer extends MpEntity {
     getNearbyPeds(sizeAndPeds: number, ignore: number): number;
     isReloading(): boolean;
     setWeaponMovementClipset(clipSet: string): void;
-    setComponentVariation(componentId: number, drawableId: number, textureId: number, paletteId: MpPlayerPedVariationData): void;
+    setComponentVariation(componentId: number, drawableId: number, textureId: number, paletteId: number): void;
     setRagdollFlag(flag: number): void;
     setHelmetPropIndex(propIndex: number): void;
     getHeadBlendData(headBlendData: {
@@ -228,7 +228,7 @@ declare interface MpPlayer extends MpEntity {
     clearDriveByClipsetOverride(): void;
     isTracked(): boolean;
     setHairColor(colorID: number, highlightColorID: number): void;
-    setCombatMovement(combatMovement: MpPlayerCombatMovement): void;
+    setCombatMovement(combatMovement: number): void;
     isInMeleeCombat(): boolean;
     setDefensiveAreaAttachedToPed(attachPed: MpPed | object, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number, p8: number, p9: boolean, p10: boolean): void;
     setBoundsOrientation(p1: number, p2: number, p3: number, p4: number, p5: number): void;
@@ -236,7 +236,7 @@ declare interface MpPlayer extends MpEntity {
     setEyeColor(index: number): void;
     canKnockOffVehicle(): boolean;
     clearDamageDecalByZone(p1: number, p2: string): void;
-    getCombatFloat(ped: MpPed,p1: MpPlayerCombatFloat): number
+    getCombatFloat(ped: MpPed, p1: number): number
     setInVehicleContext(context: number | string): void;
     isStopped(): boolean;
     getJackTarget(): MpPed | object;
@@ -289,7 +289,7 @@ declare interface MpPlayer extends MpEntity {
     isInModel(modelHash: number | string): boolean;
     getParachuteState(): number;
     setVisualFieldMinElevationAngle(angle: number): void;
-    setCanBeKnockedOffVehicle(state: MpPlayerCanBeKnockedOffVehicle): void;
+    setCanBeKnockedOffVehicle(state: number): void;
     setAccuracy(accuracy: number): object;
     getRelationshipGroupHash(): number | string;
     isInParachuteFreeFall(): boolean;
@@ -314,11 +314,11 @@ declare interface MpPlayer extends MpEntity {
     clearLastDamageBone(): void;
     getNumberOfTextureVariations(componentId: number, drawableId: number): number;
     clearBloodDamage(): void;
-    setAlternateMovementAnim(stance: MpPlayerStance, animDictionary: string, animationName: string, p4: number, p5: boolean)
+    setAlternateMovementAnim(stance: number, animDictionary: string, animationName: string, p4: number, p5: boolean)
     isInFlyingVehicle(): boolean;
     isTrackedVisible(): boolean;
     registerHatedTargetsAround(radius: number): void;
-    setPropIndex(componentId: number,drawableId: MpPlayerPedPropsData, TextureId: number, attach: boolean): void;
+    setPropIndex(componentId: number, drawableId: number, TextureId: number, attach: boolean): void;
     getSourceOfDeath(): MpEntity | object;
     setHeadBlendData(shapeFirstID: number, shapeSecondID: number, shapeThirdID: number, skinFirstID: number, skinSecondID: number, skinThirdID: number, shapeMix: number, skinMix: number, thirdMix: number, isParent: boolean): void;
     isOnAnyBike(): boolean;
@@ -345,7 +345,7 @@ declare interface MpPlayer extends MpEntity {
     setMoveAnimsBlendOut(): void;
     setAsGroupMember(groupId: number): void;
     isGoingIntoCover(): boolean;
-    setCombatAttributes(attributeIndex: MpPlayerCombatAttributes, enabled: boolean): void;
+    setCombatAttributes(attributeIndex: number, enabled: boolean): void;
     setBlockingOfNonTemporaryEvents(toggle: boolean): void;
     resetRagdollTimer(): void;
     setGravity(toggle: boolean): void;
@@ -360,7 +360,7 @@ declare interface MpPlayer extends MpEntity {
     resetMovementClipset(p1: number): void;
     setPinnedDown(pinned: boolean, i: number): object;
     setRelationshipGroupDefaultHash(hash: number | string): void;
-    setToRagdoll(time1: number, time2: number, ragdollType: MpPlayerRagdollTypes, p4: boolean, p5: boolean, p6: boolean): boolean;
+    setToRagdoll(time1: number, time2: number, ragdollType: number, p4: boolean, p5: boolean, p6: boolean): boolean;
     setMovementClipset(clipSet: string, p2: number): void;
     getResetFlag(flagId: number): boolean;
     setCanRagdoll(toggle: boolean): void;
@@ -390,7 +390,7 @@ declare interface MpPlayer extends MpEntity {
     setCanPeekInCover(toggle: boolean): void;
     setEnableBoundAnkles(toggle: boolean): void;
     isPlantingBomb(): boolean;
-    setCombatAbility(p1: MpPlayerCombatAbility): void;
+    setCombatAbility(p1: number): void;
     setCanBeShotInVehicle(toggle: boolean): void;
     setAngledDefensiveArea(p1: number, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number, p8: boolean, p9: boolean): void;
     setRelationshipGroupHash(hash: number | string): void;
@@ -474,7 +474,7 @@ declare interface MpPlayer extends MpEntity {
     taskJump(unused: boolean): void;
     taskVehiclePark(vehicle: MpVehicle | object, x: number, y: number, z: number, heading: number, mode: number, radius: number, keepEngineOn: boolean): void;
     taskClearLookAt(): void;
-    taskVehicleEscort(vehicle: MpVehicle | object, targetVehicle: MpVehicle | object, mode: MpPlayerVehicleEscortModes, speed: number, drivingStyle: number, minDistance: number, p7: number, noRoadsDistance: number): void;
+    taskVehicleEscort(vehicle: MpVehicle | object, targetVehicle: MpVehicle | object, mode: number, speed: number, drivingStyle: number, minDistance: number, p7: number, noRoadsDistance: number): void;
     taskVehicleShootAt(target: MpPed | object, p2: number): void;
     taskGoToCoordWhileAimingAtCoord(x: number, y: number, z: number, aimAtX: number, aimAtY: number, aimAtZ: number, moveSpeed: number, p8: boolean, p9: number, p10: number, p11: boolean, flags: object, p13: boolean, firingPattern: number | string): void;
     taskScriptedAnimation(p1: object, p2: object, p3: object, p4: number, p5: number): void;
@@ -589,7 +589,7 @@ declare interface MpPlayer extends MpEntity {
     taskEnterVehicle(vehicle: MpVehicle | object, timeout: number, seat: number, speed: number, p5: number, p6: object): void;
     setParachuteTaskTarget(x: number, y: number, z: number): void;
     clearDrivebyTaskUnderneathDrivingTask(): void;
-    taskVehicleTempAction(vehicle: MpVehicle | object, action: MpPlayerVehicleActions, time: number): void;
+    taskVehicleTempAction(vehicle: MpVehicle | object, action: number, time: number): void;
     isRunning(): boolean;
     getNavmeshRouteDistanceRemaining(p1: object, p2: object): object;
     taskGuardSphereDefensiveArea(p1: number, p2: number, p3: number, p4: number, p5: number, p6: object, p7: number, p8: number, p9: number, p10: number): void;
@@ -617,7 +617,7 @@ declare interface MpPlayer extends MpEntity {
     updateTaskSweepAim(entity: MpEntity | object): void;
     taskStayInCover(): void;
     taskPause(ms: number): void;
-    taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number, flag: MpPlayerEAnimationFlags, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
+    taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number, flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
     taskSetDecisionMaker(p1: number | string): void;
     stopAnimPlayback(p1: object, p2: boolean): void;
     taskSynchronizedScene(scene: number, animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number, flag: number, playbackRate: number, p9: object): void;
@@ -628,261 +628,9 @@ declare interface MpPlayer extends MpEntity {
     setPathsWidthPlant(mayEnterWater: boolean): void;
     taskArrest(target: MpPed | object): void;
     taskStartScenarioAtPosition(scenarioName: string, x: number, y: number, z: number, heading: number, p6: object, p7: boolean, p8: boolean): void;
-    taskVehicleFollow(vehicle: MpVehicle | object, targetEntity: MpEntity | object, drivingStyle: MpPlayerDrivingStyles, speed: number, minDistance: number): void;
+    taskVehicleFollow(vehicle: MpVehicle | object, targetEntity: MpEntity | object, drivingStyle: number, speed: number, minDistance: number): void;
 }
 
 declare interface MpPlayerPool extends MpPool<MpPlayer> {
-
-}
-
-declare enum MpPlayerParachuteTint {
-    none = -1,
-    rainbow = 0,
-    red = 1,
-    seasideStripes = 2,
-    widowMaker = 3,
-    patriot = 4,
-    blue = 5,
-    black = 6,
-    hornet = 7,
-    airFocce = 8,
-    desert = 9,
-    shadow = 10,
-    highAltitude = 11,
-    airbone = 12,
-    sunrise = 13
-}
-
-declare enum MpPlayerCrimeType {
-    firearmsPossession = 1,
-    personRunningARedLight = 2,
-    recklessDriver = 3,
-    speedingVehicle= 4,
-    trafficViolation = 5,
-    motorcycleRiderWithoutAHelmet = 6,
-    vehicleTheft = 7,
-    grandTheftAuto = 8,
-    unk = 9,
-    unk2 = 10,
-    assaultOnACivilian = 11,
-    assaultOnAnOfficer = 12,
-    assaultWithADeadlyWeapon = 13,
-    officerShot = 14,
-    pedestrianStruckByAVehicle = 15,
-    officerStruckByAVehicle = 16,
-    helicopterDown = 17,
-    civilianOnFire = 18,
-    officerSetOnFire = 19,
-    carOnFire = 20,
-    airUnitDown = 21,
-    anExplosion = 22,
-    aStabbing = 23,
-    officerStabbed = 24,
-    attackOnAVehicle = 25,
-    damageToProperty = 26,
-    suspectThreateningOfficerWithAFirearm = 27,
-    shotsFired = 28,
-    unk3 = 29,
-    unk4 = 30,
-    unk5 = 31,
-    unk6 = 32,
-    unk7 = 33,
-    unk8 = 34,
-    unk9 = 35,
-    unk10 = 36,
-    unk11 = 37,
-    unk12 = 38,
-    unk13 = 39,
-    unk14 = 40,
-    unk15 = 41,
-    unk16 = 42,
-    possibleDisturbance = 43,
-    civilianInNeedOfAssistance = 44,
-    unk17 = 45,
-    unk18 = 46
-}
-
-declare enum MpPlayerAction {
-    climbing = 'climbing',
-    in_cover = 'in_cover',
-    aiming_from_cover = 'aiming_from_cover',
-    diving = 'diving',
-    entering_vehicle = 'entering_vehicle',
-    exiting_vehicle = 'exiting_vehicle',
-    jumping = 'jumping',
-    moving = 'moving',
-    moving_aiming = 'moving_aiming',
-    moving_reloaing = 'moving_reloaing',
-    parachuting = 'parachuting',
-    ragdoll = 'ragdoll',
-    aiming = 'aiming',
-    reloading = 'reloading',
-    stopped = 'stopped',
-}
-
-declare enum MpPlayerPedConfigFlags
-{
-    flagCanFlyThruWindscreen = 32,
-    flagDiesByRagdoll = 33,
-    flagNoCollision = 52,
-    flagNoCollide = 62,
-    flagDead = 71,
-    flagIsSniperScopeActive = 72,
-    flagSuperDead = 73,
-    flagIsAiming = 78,
-    flagDrunk = 100,
-    flagNoPlayerMelee = 122,
-    flagNmMessage466 = 125,
-    flagInjuredLimp = 166,
-    flagInjuredLimp2 = 170,
-    flagInjuredDown = 187,
-    flagShrink = 223,
-    flagMeleeCombat = 224,
-    flagNoWrithe = 281,
-    flagFreeze = 292,
-    flagIsStill = 301,
-    flagNoPlayerMelee2 = 314,
-    flagAlpha = 410,
-}
-
-declare enum MpPlayerPedVariationData {
-    playerVariationFace = 0,
-    playerVariationHead = 1,
-    playerVariationHair = 2,
-    playerVariationTorso = 3,
-    playerVariationLegs = 4,
-    playerVariationHands = 5,
-    playerVariationFeet = 6,
-    playerVariationEyes = 7,
-    playerVariationAccessories = 8,
-    playerVariationTasks = 9,
-    playerVariationTextures = 10,
-    playerVariationTorso2 = 11
-}
-
-declare enum MpPlayerCombatMovement {
-    stationary = 0,
-    defensive = 1,
-    offensive = 2,
-    suicidalOffensive = 3
-}
-
-declare enum MpPlayerCombatFloat {
-    blindFireChance = 0,
-    burstDurationInCover = 1,
-    timeBetweenBurstsInCover = 3,
-    timeBetweenPeeks = 4 ,
-    strafeWhenMovingChance = 5,
-    walkWhenStrafingChance = 8,
-    attackWindowDistanceForCover = 11,
-    timeToInvalidateInjuredTarget = 12,
-    optimalCoverDistance = 16,
-}
-
-declare enum MpPlayerCanBeKnockedOffVehicle {
-    can = 0,
-    cant =1,
-    unk = 2,
-    unk2 = 3
-}
-
-declare enum MpPlayerStance {
-    idle = 0,
-    walk = 1,
-    run = 2,
-}
-
-declare enum MpPlayerPedPropsData {
-    playerPropHats = 0,
-    playerPropGlasses = 1,
-    playerPropEars = 2,
-}
-
-declare enum MpPlayerCombatAttributes {
-    bfCanUseCover = 0,
-    bfCanUseVehicles = 1,
-    bfCanDoDrivebys = 2,
-    bfCanLeaveVehicle = 3,
-    bfCanFightArmedPedsWhenNotArmed = 5,
-    bfCanTauntInVehicle = 20,
-    bfAlwaysFight = 46,
-    bfIgnoreTrafficWhenDriving = 52,
-    bfFreezeMovement = 292,
-    bfbfPlayerCanUseFireingWeapons = 1424
-}
-
-declare enum MpPlayerRagdollTypes {
-    normal = 0,
-    stiffLegs = 1,
-    narrowLegs = 2,
-    wideLegs = 3
-}
-
-declare enum MpPlayerCombatAbility {
-    poor = 0,
-    average = 1,
-    professional = 2
-}
-
-declare enum MpPlayerVehicleEscortModes {
-    behind = -1,
-    ahead = 0,
-    left = 1,
-    right = 2,
-    backLeft = 3,
-    backRight = 4
-}
-
-declare enum MpPlayerAimFlag {
-    aimAtFocusLocation = 0,
-    aimAtGoToLocation = 1
-}
-
-declare enum MpPlayerVehicleActions {
-    brake = 1,
-    brakeAndReverse = 3,
-    turnLeftBraking = 4,
-    turnRightBraking = 5,
-    brakeStrongUntilTimeEnds = 6,
-    turnLeftRightAccelerate = 7,
-    weakAcceleration = 9,
-    turnLeftRestoreWheelPosToCenter = 10,
-    turnRightRestoreWheelPosToCenter = 11,
-    turnLeftGoReverse = 13,
-    turnLeftGoReverse2 = 14,
-    crashTheGameAfterTwoSeconds = 16,
-    keepActualStateMaybeGameCrash = 17,
-    gameCrash = 18,
-    strongBrakeTurnLeftRight = 19,
-    weakBrakeAndTurnLeftThenTurnRight = 20,
-    weakBrakeAndTurnRightThenTurnLeft = 21,
-    brakeAndReverse2 = 22,
-    accelerateFast = 23,
-    brak2e = 24,
-    brakeTurningLeftThenWhenAlmostStoppingItTurnsLeftMore = 25,
-    brakeTurningR0ightThenWhenAlmostStoppingItTurnsRightMore = 26,
-    brakeUntilCarStopOrUntilTimeEnds = 27,
-    brakeStrongReverseAcceleration = 28,
-    performsBurnout = 30,
-    accelerateHandbrake = 31,
-    accelerateVeryStrong = 32
-}
-
-declare enum MpPlayerEAnimationFlags {
-    animFlagsNormal = 0,
-    animFlagsRepeat = 1,
-    animFlagsStopLastFrame = 2,
-    animFlagsUpperbody = 16,
-    animFlagsEnablePlayerControl = 32,
-    animFlagsCancelable = 120,
-}
-
-declare enum MpPlayerDrivingStyles {
-    rushed = 0,
-    ignoreTrafficLights = 1,
-    fast = 2,
-    normal = 3,
-    fastAvoidTraffic = 4,
-    fastStopsInTrafficButOvertakesSometimes = 5,
-    fastAvoidsTrafficExtremely = 6
+    readonly local: MpPlayer;
 }
