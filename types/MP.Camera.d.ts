@@ -18,7 +18,7 @@ declare interface MpCamera extends MpEntity {
     setDofStrength(dofStrength: number): void;
     attachToPedBone(ped, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
     pointAtPedBone(ped, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
-    shake(type: MpCameraShake | string, amplitude: number): void;
+    shake(type: string, amplitude: number): void;
     isShaking(): boolean;
     setMotionBlurStrength(strength: number): void;
     getRot(p0: object): MpVector3;
@@ -27,6 +27,7 @@ declare interface MpCamera extends MpEntity {
     destroy(destroy?: boolean): void;
     setAffectsAiming(toggle: boolean): void;
     playAnim(animName: string, animDictionary: string, x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, p8: object, p9: number): void;
+    playAnim(animName: string, propName: string, p2: number, p3: boolean, p4: boolean, p5: boolean, delta: number, bitset: object): boolean;
     setActiveWithInterp(camFrom: MpCamera, duration: number, easeLocation: number, easeRotation: number): void;
     getAnimCurrentPhase(): number;
     animatedShake(p0: string, p1: string, p2: string, p3: number): void;
@@ -51,37 +52,9 @@ declare interface MpCamera extends MpEntity {
     stopPointing(): void;
     pointAtCoord(x: number, y: number, z: number): void;
     attachTo(entity: MpEntity | object, xOffset: number, yOffset: number, zOffset: number, isRelative: boolean): void;
+    attachTo(entity: MpEntity | object, boneIndex: number, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, p8: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, vertexIndex: number, fixedRot: boolean): void;
 }
 
 declare interface MpCameraPool extends MpPool<MpCamera> {
 
-}
-
-declare enum MpCameraName {
-    defaultScriptedCamera = 'DEFAULT_SCRIPTED_CAMERA',
-    defaultAnimatedCamera = 'DEFAULT_ANIMATED_CAMERA',
-    defaultSplineCamera = 'DEFAULT_SPLINE_CAMERA',
-    defaultScriptedFlyCamera = 'DEFAULT_SCRIPTED_FLY_CAMERA',
-    timedSplinedCamera = 'TIMED_SPLINE_CAMERA'
-}
-
-declare enum MpCameraShake {
-    deathFailInEffectShake = 'DEATH_FAIL_IN_EFFECT_SHAKE',
-    drunkShake = 'DRUNK_SHAKE',
-    family5DrugTripShake = 'FAMILY5_DRUG_TRIP_SHAKE',
-    handShake = 'HAND_SHAKE',
-    joltShake = 'JOLT_SHAKE',
-    largeExplosionShake = 'LARGE_EXPLOSION_SHAKE',
-    mediumExplosionShake = 'MEDIUM_EXPLOSION_SHAKE',
-    smallExplosionShake = 'SMALL_EXPLOSION_SHAKE',
-    roadVibrationShake = 'ROAD_VIBRATION_SHAKE',
-    skyDivingShake = 'SKY_DIVING_SHAKE',
-    vibrateShake = 'VIBRATE_SHAKE'
-}
-
-declare enum MpCameraView {
-    thirdPersonClose = 0,
-    thirdPersonMid = 1,
-    thirdPersonFar = 2,
-    firstPerson = 3
 }

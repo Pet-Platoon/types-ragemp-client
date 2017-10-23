@@ -8,7 +8,7 @@ declare interface MpGameGameplay {
         readonly maximum: MpVector3;
     };
     clearAreaOfCops(x: number, y: number, z: number, radius: number, flags: number): void;
-    createIncidentWithEntity(p0: MpGameGameplayIncidentType, p1: MpEntity, p2: number, p3: number, outIncident: number): number;
+    createIncidentWithEntity(p0: number, p1: MpEntity, p2: number, p3: number, outIncident: number): number;
     hasButtonCombinationJustBeenEntered(hash: number | string, amount: number): boolean;
     clearAreaOfProjectiles(x: number, y: number, z: number, radius: number, flags: number): void;
     areStringsEqual(string1: string, string2: string): boolean;
@@ -37,7 +37,7 @@ declare interface MpGameGameplay {
     getRandomFloatInRange(startRange: number, endRange: number): number;
     registerIntToSave(p0: object, name: string): void;
     isBulletInArea(p0: number, p1: number, p2: number, p3: number, p4: boolean): boolean;
-    createIncident(p0: MpGameGameplayIncidentType, p2: number, p3: number, p4: number, p5: number, p6: number, outIncident: number): number;
+    createIncident(p0: number, p2: number, p3: number, p4: number, p5: number, p6: number, outIncident: number): number;
     setRandomSeed(time: number): void;
     isPrevWeatherType(weatherType: string): boolean;
     setDispatchTimeBetweenSpawnAttempts(p0: object, p1: number): void;
@@ -101,7 +101,7 @@ declare interface MpGameGameplay {
     getHashKey(value: string): string | number;
     getRandomIntInRange(startRange: number, endRange: number): number;
     setFadeInAfterDeathArrest(toggle: boolean): void;
-    enableDispatchService(dispatchType: MpGameGameplayDispatchType, toggle: boolean): void;
+    enableDispatchService(dispatchType: number, toggle: boolean): void;
     deleteStuntJump(p0: number): void;
     hasBulletImpactedInBox(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number, p6: boolean, p7: boolean): boolean;
     clearAreaOfObjects(x: number, y: number, z: number, radius: number, flags: number): void;
@@ -126,27 +126,4 @@ declare interface MpGameGameplay {
     getFreeStackSlotsCount(stackSize: number): number;
     isSniperBulletInArea(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean;
     setExplosiveMeleeThisFrame(): object;
-}
-
-declare enum MpGameGameplayIncidentType {
-    fireDepartment = 3,
-    paramedics = 5,
-    police = 7,
-    pedsInCavalcades = 11,
-    merryweather = 14
-}
-
-declare enum MpGameGameplayDispatchType {
-    policeAutomobile = 1,
-    policeHelicopter = 2,
-    swatHelicopter = 3,
-    fireDepartment = 4,
-    swatAutomobile = 5,
-    ambulanceDepartment = 6,
-    gangs = 7,
-    policeRiders = 8,
-    policeVehicleRequest = 9,
-    policeRoadBlock = 10,
-    policeBoat = 11,
-    armyVehicle = 12,
 }

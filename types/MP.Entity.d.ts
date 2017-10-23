@@ -90,7 +90,7 @@ declare interface MpEntity {
     setRotation(pitch: number, roll: number, yaw: number, rotationOrder: number, p4: boolean): void;
     getForwardY(): number;
     isInAir(): boolean;
-    getType(): MpEntityType | number;
+    getType(): number;
     hasCollidedWithAnything(): boolean;
     getForwardX(): number;
     isAnObject(): boolean;
@@ -147,55 +147,6 @@ declare interface MpEntity {
     processAttachments(): void;
     getPopulationType(): number;
     setProofs(bulletProof: boolean, fireProof: boolean, explosionProof: boolean, collisionProof: boolean, meleeProof: boolean, p5: boolean, p6: boolean, drownProof: boolean): void;
-    getBoneIndexByName(boneName: MpVehicleBones | string): number;
+    getBoneIndexByName(boneName: string): number;
     hasClearLosTo(entity: MpEntity | object, traceType: number): boolean;
-}
-
-declare enum MpEntityType {
-    none = 0,
-    ped = 1,
-    vehicle = 2,
-    object = 3
-}
-
-declare enum MpVehicleBones {
-    chassis = 'chassis',
-    windscreen = 'windscreen',
-    seat_pside_r = 'seat_pside_r',
-    seat_dside_r = 'seat_dside_r',
-    bodyshell = 'bodyshell',
-    suspension_lm = 'suspension_lm',
-    suspension_lr = 'suspension_lr',
-    platelight = 'platelight',
-    attach_female = 'attach_female',
-    attach_male = 'attach_male',
-    bonnet = 'bonnet',
-    boot = 'boot',
-    chassis_dummy = 'chassis_dummy',	//Center of the dummy
-    chassis_Control = 'chassis_Control',	//Not found yet
-    door_dside_f = 'door_dside_f',	//Door left, front
-    door_dside_r = 'door_dside_r',	//Door left, back
-    door_pside_f = 'door_pside_f',	//Door right, front
-    door_pside_r = 'door_pside_r',	//Door right, back
-    Gun_GripR = 'Gun_GripR',
-    windscreen_f = 'windscreen_f',
-    VFX_Emitter = 'VFX_Emitter',
-    window_lf = 'window_lf',	//Window left, front
-    window_lr = 'window_lr',	//Window left, back
-    window_rf = 'window_rf',	//Window right, front
-    window_rr = 'window_rr',	//Window right, back
-    engine = 'engine',	//Position of the engine
-    gun_ammo = 'gun_ammo',
-    ROPE_ATTATCH = 'ROPE_ATTATCH',	//Not misspelled. In script 'finale_heist2b.c4'.
-    wheel_lf = 'wheel_lf',	//Wheel left, front
-    wheel_lr = 'wheel_lr',	//Wheel left, back
-    wheel_rf = 'wheel_rf',	//Wheel right, front
-    wheel_rr = 'wheel_rr',	//Wheel right, back
-    exhaust = 'exhaust',	//Exhaust. shows only the position of the stock-exhaust
-    overheat = 'overheat',	//A position on the engine(not exactly sure, how to name it)
-    misc_e = 'misc_e',	//Not a car-bone.
-    seat_dside_f = 'seat_dside_f',	//Driver-seat
-    seat_pside_f = 'seat_pside_f',	//Seat next to driver
-    Gun_Nuzzle = 'Gun_Nuzzle',
-    seat_r = 'seat_r'
 }

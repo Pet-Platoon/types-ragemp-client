@@ -63,7 +63,7 @@ declare interface MpGamePlayer {
     setHudAnimStopLevel(toggle: boolean): void;
     canPlayerStartMission(): boolean;
     getTimeSincePlayerHitPed(): number;
-    reportCrime(crimeType: MpPlayerCrimeType,wantedLvlThresh: number): void;
+    reportCrime(crimeType: number, wantedLvlThresh: number): void;
     specialAbilityChargeContinuous(p1: boolean): void;
     playerAttachVirtualBound(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number): void;
     specialAbilityChargeMedium(p1: boolean,p2: boolean): void;

@@ -14,13 +14,3 @@ declare interface MpObject extends MpEntity {
 declare interface MpObjectPool extends MpPool<MpObject> {
 
 }
-
-declare enum MpObjectPlacementColor {
-    none = -1,
-    red = 0,
-    green = 1,
-    blue = 2,
-    greenLarger = 3,
-    nothing = 4,
-    greenSmall = 5
-}

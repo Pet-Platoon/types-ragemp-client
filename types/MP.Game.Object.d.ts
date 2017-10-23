@@ -9,7 +9,7 @@ declare interface MpGameObject {
     isPointInAngledArea(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number, p8: number, p9: number, p10: boolean, p11: boolean): boolean;
     createPortablePickup(pickupHash: string | number, x: number, y: number, z: number, placeOnGround: boolean, modelHash: string | number): MpPickup;
     removePickup(pickup: MpPickup): void;
-    highlightPlacementCoords(x: number, y: number, z: number, colorIndex: MpObjectPlacementColor | number): void;
+    highlightPlacementCoords(x: number, y: number, z: number, colorIndex: number): void;
     isAnyObjectNearPoint(x: number, y: number, z: number, range: number, p4: boolean): boolean;
     removeDoorFromSystem(doorHash: string | number): void;
     createObject(modelHash: string | number, x: number, y: number, z: number, networkHandle: boolean, createHandle: boolean, dynamic: boolean): MpObject;

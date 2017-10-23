@@ -46,12 +46,5 @@ declare interface MpGameStreaming {
     setModelAsNoLongerNeeded(model: number | string): void;
     removeIpl(iplName: string): void;
     removeAnimDict(animDict: string): void;
-    startPlayerSwitch(from: MpPed | object, to: MpPed | object, flags: number, switchType: MpGameStreamingEPlayerSwitchTypes): void;
-}
-
-declare enum MpGameStreamingEPlayerSwitchTypes {
-    switchTypeAauto = 0,
-    switchTypeLong = 1,
-    switchTypeMedium = 2,
-    switchTypeShort = 3
+    startPlayerSwitch(from: MpPed | object, to: MpPed | object, flags: number, switchType: number): void;
 }

@@ -1,13 +1,13 @@
 /// <reference path="../index.d.ts" />
 
 declare interface MpGameDatafile {
-    objectValueGetType(objectData: object, key: string): MPGameDatafileType;
+    objectValueGetType(objectData: object, key: string): number;
     arrayValueGetSize(arrayData: object): number;
     objectValueGetFloat(objectData: object, key: string): number;
     objectValueGetBoolean(objectData: object, key: string): boolean;
     arrayValueAddString(arrayData: object, value: string): void;
     objectValueAddBoolean(arrayData: object, key: string, value: boolean): void;
-    arrayValueGetType(arrayData: object, arrayIndex: number): MPGameDatafileType;
+    arrayValueGetType(arrayData: object, arrayIndex: number): number;
     objectValueGetString(objectData: object, key: string): string;
     arrayValueGetInteger(arrayData: object, arrayIndex: number): number;
     arrayValueAddVector3(arrayData: object, valueX: number, valueY: number, valueZ: number): void;
@@ -31,14 +31,4 @@ declare interface MpGameDatafile {
     arrayValueGetString(arrayData: object, arrayIndex: number): string;
     objectValueAddInteger(objectData: object, key: string, value: number): void;
     arrayValueAddBoolean(arrayData: object, value: boolean): void;
-}
-
-declare enum MPGameDatafileType {
-    boolean = 1,
-    integer = 2,
-    float = 3,
-    string = 4,
-    vector3 = 5,
-    object = 6,
-    array = 7
 }

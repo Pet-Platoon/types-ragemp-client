@@ -4,7 +4,7 @@ declare interface MpGameWeapon {
     getWeaponComponentTypeModel(componentHash: string | number): string | number;
     giveWeaponComponentToWeaponObject(weaponObject: MpObject, addonHash: string | number): void;
     hasWeaponAssetLoaded(weaponHash: string | number): boolean;
-    getWeaponDamageType(weaponHash: string | number): MpGameWeaponDamageType;
+    getWeaponDamageType(weaponHash: string | number): number;
     getWeapontypeSlot(weaponHash: string | number): string | number;
     requestWeaponHighDetailModel(weaponObject: MpObject | object): void;
     requestWeaponAsset(weaponHash: string | number, p1: number, p2: number): void;
@@ -35,20 +35,4 @@ declare interface MpGameWeapon {
     removeWeaponComponentFromWeaponObject(p0: any, p1: any): void;
     setWeaponObjectTintIndex(weapon: MpEntity, tint: number): void;
     removeAllProjectilesOfType(weaponhash: string | number, p1: boolean): void;
-}
-
-declare enum MpGameWeaponDamageType {
-    unknown = 0,
-    noDamage = 1,
-    melee = 2,
-    bullet = 3,
-    forceRagdollFall = 4,
-    explosive = 5,
-    fire = 6,
-    fall = 8,
-    electric = 10,
-    barbedWire = 11,
-    extinguisher = 12,
-    gas = 13,
-    waterCannon = 14
 }
