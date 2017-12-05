@@ -47,6 +47,7 @@
 /// <reference path="types/MP.Gui.Chat.d.ts" />
 /// <reference path="types/MP.Gui.Cursor.d.ts" />
 /// <reference path="types/MP.Marker.d.ts" />
+/// <reference path="types/MP.Nametags.d.ts" />
 /// <reference path="types/MP.Object.d.ts" />
 /// <reference path="types/MP.Ped.d.ts" />
 /// <reference path="types/MP.Pickup.d.ts" />
