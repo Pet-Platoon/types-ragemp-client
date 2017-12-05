@@ -14,4 +14,6 @@ declare interface ScriptContext {
     readonly colshapes: MpColshapePool;
     readonly events: MpEvents;
     readonly game: MpGame;
+    readonly nametags: MpNametags;
+    readonly raycasting: MpRaycasting;
 }
