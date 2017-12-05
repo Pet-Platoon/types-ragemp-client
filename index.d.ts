@@ -54,6 +54,7 @@
 /// <reference path="types/MP.Player.d.ts" />
 /// <reference path="types/MP.Pool.d.ts" />
 /// <reference path="types/MP.Quaternion.d.ts" />
+/// <reference path="types/MP.Raycasting.d.ts" />
 /// <reference path="types/MP.Vector3.d.ts" />
 /// <reference path="types/MP.Vehicle.d.ts" />
 
