@@ -3,7 +3,7 @@
 declare interface MpGameAudio {
     startAudioScene(sceneName: string): boolean;
     isAmbientZoneEnabled(ambientZone: string): boolean;
-    getVehicleDefaultHorn(vehicle: MpVehicle): string | number;
+    getVehicleDefaultHorn(vehicle: MpVehicle | object): string | number;
     prepareSynchronizedAudioEventForScene(p0: object, p1: object): boolean;
     startAlarm(alarmName: string, p2: boolean): void;
     setMobileRadioEnabledDuringGameplay(toggle: boolean): void;

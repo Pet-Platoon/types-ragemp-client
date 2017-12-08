@@ -51,7 +51,7 @@ declare interface MpEntity {
     freezePosition(toggle: boolean): void;
     stopSynchronizedAnim(p0: number, p1: boolean): boolean;
     setAnimCurrentTime(animDict: string, animName: string, time: number): void;
-    setAlpha(alphaLevel: string, skin: boolean): void;
+    setAlpha(alphaLevel: number, skin: boolean): void;
     getWorldPositionOfBone(boneIndex: number): MpVector3;
     isVisible(): boolean;
     getVelocity(): MpVector3;
