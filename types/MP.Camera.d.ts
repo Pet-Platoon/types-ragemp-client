@@ -39,7 +39,7 @@ declare interface MpCamera extends MpEntity {
     getFarClip(): number;
     getCoord(): MpVector3;
     stopShaking(p0: boolean): void;
-    setParams(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number,fov: number, duration: number, p8: object, p9: object, p10: object): void;
+    setParams(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, fov: number, duration: number, p8: object, p9: object, p10: object): void;
     getFov(): number;
     setDofMaxNearInFocusDistance(p0: number): void;
     getNearClip(): number;
