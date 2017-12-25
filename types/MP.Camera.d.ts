@@ -16,8 +16,8 @@ declare interface MpCamera extends MpEntity {
     setCoord(posX: number, posY: number, posZ: number): void;
     pointAt(entity: MpEntity, offsetX: number, offsetY: number, offsetZ: number, p4: boolean): void;
     setDofStrength(dofStrength: number): void;
-    attachToPedBone(ped, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
-    pointAtPedBone(ped, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
+    attachToPedBone(ped: MpPed, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
+    pointAtPedBone(ped: MpPed, boneIndex: number, x: number, y: number, z: number, heading: boolean): void;
     shake(type: string, amplitude: number): void;
     isShaking(): boolean;
     setMotionBlurStrength(strength: number): void;
@@ -26,7 +26,7 @@ declare interface MpCamera extends MpEntity {
     setRot(rotX: number, rotY: number, rotZ: number, p3: number): void;
     destroy(destroy?: boolean): void;
     setAffectsAiming(toggle: boolean): void;
-    playAnim(animName: string, animDictionary: string, x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, p8: object, p9: number): void;
+    playAnim(animName: string, animDictionary: string, x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, p8: boolean, p9: number): void;
     playAnim(animName: string, propName: string, p2: number, p3: boolean, p4: boolean, p5: boolean, delta: number, bitset: object): boolean;
     setActiveWithInterp(camFrom: MpCamera, duration: number, easeLocation: number, easeRotation: number): void;
     getAnimCurrentPhase(): number;
@@ -39,7 +39,7 @@ declare interface MpCamera extends MpEntity {
     getFarClip(): number;
     getCoord(): MpVector3;
     stopShaking(p0: boolean): void;
-    setParams(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, duration: number, p8: object, p9: object, p10: object): void;
+    setParams(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, fov: number, duration: number, p8: object, p9: object, p10: object): void;
     getFov(): number;
     setDofMaxNearInFocusDistance(p0: number): void;
     getNearClip(): number;
