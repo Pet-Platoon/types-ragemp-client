@@ -15,5 +15,6 @@ declare interface ScriptContext {
     readonly events: MpEvents;
     readonly game: MpGame;
     readonly nametags: MpNametags;
-    readonly raycasting: MpRaycasting;
+	readonly raycasting: MpRaycasting;
+	readonly Vector3: Vector3;
 }
