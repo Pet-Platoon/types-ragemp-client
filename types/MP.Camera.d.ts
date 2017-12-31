@@ -21,7 +21,7 @@ declare interface MpCamera extends MpEntity {
     shake(type: string, amplitude: number): void;
     isShaking(): boolean;
     setMotionBlurStrength(strength: number): void;
-    getRot(p0: object): MpVector3;
+    getRot(p0: number): MpVector3;
     setDofFnumberOfLens(p1: number): void;
     setRot(rotX: number, rotY: number, rotZ: number, p3: number): void;
     destroy(destroy?: boolean): void;
