@@ -16,5 +16,5 @@ declare interface ScriptContext {
     readonly game: MpGame;
     readonly nametags: MpNametags;
     readonly raycasting: MpRaycasting;
-    readonly discord: MPDiscord;
+    readonly discord: MpDiscord;
 }

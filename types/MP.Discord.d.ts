@@ -1,4 +1,4 @@
 /// <reference path="../index.d.ts" />
-declare interface MPDiscord {
+declare interface MpDiscord {
     update(detailedStatus: string, state: string): void;
 }
