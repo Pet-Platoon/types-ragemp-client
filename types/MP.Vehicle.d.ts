@@ -310,6 +310,7 @@ declare interface MpVehicle extends MpEntity {
     setHeliBladeSpeed(speed: number): void;
     getDoorAngleRatio(door: number): number;
     setTowTruckCraneHeight(height: number): void;
+    movable(): boolean;
 }
 
 declare interface MpVehiclePool extends MpPool<MpVehicle> {

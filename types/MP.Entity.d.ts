@@ -149,4 +149,6 @@ declare interface MpEntity {
     setProofs(bulletProof: boolean, fireProof: boolean, explosionProof: boolean, collisionProof: boolean, meleeProof: boolean, p5: boolean, p6: boolean, drownProof: boolean): void;
     getBoneIndexByName(boneName: string): number;
     hasClearLosTo(entity: MpEntity | object, traceType: number): boolean;
+    getVariable(value: string): any;
+    setVariable(key: string, value: any): any;
 }
